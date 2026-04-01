@@ -1,3 +1,11 @@
+<?php
+
+include('db.php');
+
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +17,10 @@
     <link rel="stylesheet" href="static/bootstrap.min.css">
 </head>
 <body>
+
+    <?php
+        include("navbar.php");
+    ?>
     
 </body>
 </html>
