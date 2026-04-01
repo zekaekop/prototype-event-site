@@ -2,9 +2,8 @@
 
 include("base.php");
 
-
 if ($_SERVER["REQUEST_METHOD"]  == "POST"){
-    if (isset($_POST["login_account"])){ 
+    if (isset($_POST["register_account"])){ 
 
         $username = $_POST["username"];
         $email= $_POST["email"];
@@ -32,16 +31,16 @@ if ($_SERVER["REQUEST_METHOD"]  == "POST"){
 
 <div class="container">
     <div class="card mt-5">
-    <h1>Login</h1>
+    <h1>Register</h1>
 
     <form method="POST" action="">
 
         <input type="text" name="username" placeholder="Username ..." id="">
         <input type="text" name="email" placeholder="Email ..." id="">
-        <input type="text" name="password" placeholder="Password ..." id="">
+        <input type="password" name="password" placeholder="Password ..." id="">
+        <input type="password" name="repeat_password" placeholder="Repeat Password ..." id="">
 
-        <button type="submit" name="login_account" >Register</button>
-
+        <button type="submit" name="register_account" >Register</button>
     </form>
     </div>
 </div>
