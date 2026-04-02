@@ -25,6 +25,7 @@ session_start();
         # The purpose of this is to hide the navbar and footer when displaying the login or register pages
         if ($_SERVER['PHP_SELF'] != '/prototype/prototype-event-site/templates/account/login.php' &&
             $_SERVER['PHP_SELF'] != '/prototype/prototype-event-site/templates/account/register.php') {
+            # NOTE: The guest logout AUTH code is written in navbar
             include("navbar.php");
             include("footer.php");
         }

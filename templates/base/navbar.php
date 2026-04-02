@@ -12,3 +12,10 @@
         </div>
     </div>
 </div>
+
+<?php 
+if (!isset($_SESSION['user'])) {
+    header("Location: ../account/logout.php");
+    exit();
+}
+?>
