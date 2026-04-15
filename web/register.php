@@ -1,6 +1,6 @@
 <?php
 
-include("../base/base.php");
+include("base.php");
 
 $status = "";
 

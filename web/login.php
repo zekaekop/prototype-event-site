@@ -1,6 +1,6 @@
 <?php
 
-include("../base/base.php");
+include("base.php");
 
 $status = "";
 
@@ -10,6 +10,9 @@ if ($_SERVER["REQUEST_METHOD"]  == "POST"){
         $username = $_POST["username"];
         $email= $_POST["email"];
         $password = $_POST["password"];
+
+        $test = password_hash($password, PASSWORD_DEFAULT);
+        echo "$username , $email , $test";
 
         $query = $pdo->prepare("SELECT * FROM CAS.users WHERE name = ?");
         $query->execute([$username]);
@@ -23,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"]  == "POST"){
                 $_SESSION["role"] = $user["role"];
                 $_SESSION["user"] = $user;
 
-                header("Location: ../base/home.php");
+                header("Location: home.php");
                 exit();
             }else{
                 $status = "Could not log in";
@@ -51,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"]  == "POST"){
             <input type="text" name="email" placeholder="Email ..." id="" required>
             <input type="password" name="password" placeholder="Password ..." id="" required>
 
-            <button type="submit" name="login_account" >Register</button>
+            <button type="submit" name="login_account" >Login</button>
 
         </form>
         <a href="register.php">Don't have an account?</a>
